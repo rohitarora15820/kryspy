@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1043900447790",
+    "project_id": "kryspy-b0753",
+    "storage_bucket": "kryspy-b0753.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043900447790:android:596e7b05e16b06767133bf",
+        "android_client_info": {
+          "package_name": "com.example.kryspy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043900447790-7b1i735s6uerbicnek79d8c4rgcs9arr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUs6iypyZ6YuktrhGJJl_AKoq_kw25yf0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043900447790-7b1i735s6uerbicnek79d8c4rgcs9arr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1043900447790-1oacbm7qt9t8h5n9vvjlb6uegvm697qb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.kryspy"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
