@@ -5,6 +5,7 @@ import 'package:kryspy/providers/auth_provider.dart';
 
 import '../../components/customTextField.dart';
 import '../../firebase_instance.dart';
+import '../../providers/global_providers.dart';
 
 class SignUpPage extends ConsumerStatefulWidget {
   const SignUpPage({super.key});

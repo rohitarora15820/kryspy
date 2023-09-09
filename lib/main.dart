@@ -5,8 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kryspy/firebase_options.dart';
 import 'package:kryspy/router/router.dart';
-import 'package:kryspy/screens/auth/signIn.dart';
-import 'package:kryspy/screens/auth/signUp.dart';
+
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,15 +29,14 @@ class _MyAppState extends ConsumerState<MyApp> {
     return ScreenUtilInit(
       designSize:const  Size(360, 690),
       child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
         routeInformationParser: router.routeInformationParser,
         routeInformationProvider: router.routeInformationProvider,
         routerDelegate: router.routerDelegate,
         title: 'KrySpy',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple,
-          
-          ),
-          useMaterial3: true,
+        theme:ThemeData.light(
+        
+          useMaterial3: true
         ),
         // home: const SignInPage(),
         builder: EasyLoading.init(),

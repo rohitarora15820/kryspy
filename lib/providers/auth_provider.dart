@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kryspy/firebase_instance.dart';
-import 'package:kryspy/screens/home/home_page.dart';
+
 
 class AuthProviders {
+
+
   Future signUpWithEmailAndPassword(
       String email, String password, BuildContext context) async {
     try {
@@ -14,7 +15,7 @@ class AuthProviders {
       await FirebaseInstances.firebaseAuthInstance!
           .createUserWithEmailAndPassword(email: email, password: password);
        GoRouter.of(context)
-          .pushNamed('home', queryParameters: {'name': "Rohan"});
+          .pushNamed('dashboard');
       EasyLoading.showToast("User Registration Success");
       EasyLoading.dismiss();
     } catch (e) {
@@ -33,7 +34,7 @@ class AuthProviders {
     
         
       GoRouter.of(context)
-          .pushNamed('home', queryParameters: {'name': "Rohan"});
+          .pushNamed('dashboard');
       EasyLoading.showToast("User Registration Success");
       EasyLoading.dismiss();
     } catch (e) {
@@ -48,6 +49,7 @@ class AuthProviders {
           indicator: const CircularProgressIndicator(), status: "Loading...");
       await FirebaseInstances.firebaseAuthInstance!.signOut();
 
+      // ignore: use_build_context_synchronously
       GoRouter.of(context)
           .pushReplacement('/');
       EasyLoading.showToast("Logout Successfully");
@@ -57,6 +59,8 @@ class AuthProviders {
       EasyLoading.dismiss();
     }
   }
+
+Stream get checkWhetherUserLoggedIn => FirebaseInstances.firebaseAuthInstance!.authStateChanges(); 
 }
 
-final authProviders = Provider((ref) => AuthProviders());
+

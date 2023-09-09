@@ -6,8 +6,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:kryspy/providers/data_provider.dart';
 
-import '../../components/customTextField.dart';
-import '../../firebase_instance.dart';
+import '../../../components/customTextField.dart';
+import '../../../firebase_instance.dart';
+import '../../../providers/global_providers.dart';
 
 class CreateItem extends ConsumerStatefulWidget {
   const CreateItem({super.key});

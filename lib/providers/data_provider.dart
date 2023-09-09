@@ -14,6 +14,8 @@ class DataProvider {
       .map((event) =>
           event.docs.map((e) => ItemModel.fromFirestore(e)).toList());
 
+
+
    
   Future writeItems(
     BuildContext? context,
@@ -46,4 +48,4 @@ class DataProvider {
   }
 }
 
-final dataProvider = Provider((ref) => DataProvider());
+

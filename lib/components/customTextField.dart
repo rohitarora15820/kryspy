@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-   CustomTextField(
+ const  CustomTextField(
       {super.key,
       required TextEditingController userNameController,
      this.obscureText,
@@ -10,7 +10,7 @@ class CustomTextField extends StatelessWidget {
 
   final TextEditingController _userNameController;
   final String hintText;
-  bool? obscureText = false;
+  final bool? obscureText;
 
   @override
   Widget build(BuildContext context) {
