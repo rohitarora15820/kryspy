@@ -33,4 +33,35 @@ class ProductService {
         .snapshots()
         .map((event) => ProductModel.fromMap(event as Map<String, dynamic>));
   }
+
+  Stream<List<ProductModel>> getProductsByCategoryName(String categoryName) {
+    return _products
+        .where("categoryName", isEqualTo: categoryName)
+        .snapshots()
+        .map((event) {
+      List<ProductModel> products = [];
+      for (var i in event.docs) {
+        products.add(ProductModel.fromMap(i.data() as Map<String, dynamic>));
+      }
+      return products;
+    });
+  }
+
+  Stream<List<ProductModel>> searchProducts(String search) {
+    return _products
+        .orderBy('name')
+        
+        .startAt([search])
+        .endAt(['$search\uff8ff'])
+        .limit(10)
+        .snapshots()
+        .map((event) {
+          List<ProductModel> products = [];
+          for (var doc in event.docs) {
+            products
+                .add(ProductModel.fromMap(doc.data() as Map<String, dynamic>));
+          }
+          return products;
+        });
+  }
 }

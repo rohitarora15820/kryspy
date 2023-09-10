@@ -34,7 +34,13 @@ class _MyAppState extends ConsumerState<MyApp> {
         routeInformationProvider: router.routeInformationProvider,
         routerDelegate: router.routerDelegate,
         title: 'KrySpy',
-        theme:ThemeData.light(
+        
+
+        theme:ThemeData(
+          
+      
+          primarySwatch: Colors.teal,
+
         
           useMaterial3: true
         ),
